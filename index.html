@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#242321" />
+    <meta
+      name="description"
+      content="LAST DEPT. is a footwear store where the shop is the whole room. Browse ten original silhouettes on a lit wall, then step into each pair."
+    />
+    <title>LAST DEPT. — Footwear, Series 01</title>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="LAST DEPT." />
+    <meta property="og:title" content="LAST DEPT. — Footwear, Series 01" />
+    <meta
+      property="og:description"
+      content="Ten original silhouettes. One shared space. A footwear store concept recreated as a fast, accessible front-end study."
+    />
+    <meta property="og:image" content="/media/wall/wall-1920.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      href="/media/wall/wall-1920.webp"
+      imagesrcset="/media/wall/wall-1920.webp 1920w, /media/wall/wall-3200.webp 3200w"
+      imagesizes="100vw"
+      fetchpriority="high"
+      media="(min-width: 761px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/media/mobile/mobile-wall.webp"
+      fetchpriority="high"
+      media="(max-width: 760px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/media/mobile/mobile-lights.webp"
+      media="(max-width: 760px)"
+    />
+
+    <style>
+      html {
+        background: #242321;
+        color-scheme: dark;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#scene">Skip to the collection</a>
+
+    <header class="site-header">
+      <a class="brand" href="#scene" aria-label="LAST DEPT. — Back to collection">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M3 3v26h10M16 3h5l8 8v10l-8 8h-5V3Z" />
+        </svg>
+        <span>LAST DEPT<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <span class="nav-collection">
+          <a id="collection-link" href="#scene" aria-current="page"
+            >Collection <span class="nav-count">01</span></a
+          >
+          <button id="back-link" type="button" hidden>
+            <span aria-hidden="true">←</span> Collection
+          </button>
+        </span>
+        <button type="button" data-studio-open>Studio</button>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="bag-toggle"
+          id="bag-toggle"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="bag-dialog"
+          aria-expanded="false"
+          aria-label="Bag (00), open bag"
+        >
+          Bag <span id="bag-count">(00)</span>
+        </button>
+      </div>
+    </header>
+
+    <main
+      class="scene"
+      id="scene"
+      data-mode="wall"
+      tabindex="-1"
+      aria-label="LAST DEPT. footwear collection"
+    >
+      <div class="stage" id="stage">
+        <div class="wall-frame">
+          <picture class="wall-picture">
+            <source
+              media="(max-width: 760px)"
+              srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            />
+            <img
+              class="wall"
+              id="wall"
+              src="/media/wall/wall-1920.webp"
+              srcset="/media/wall/wall-1920.webp 1920w, /media/wall/wall-3200.webp 3200w"
+              sizes="100vw"
+              width="3200"
+              height="1786"
+              fetchpriority="high"
+              decoding="async"
+              alt="Ten original footwear designs displayed on lit glass shelves against a dark wall"
+            />
+          </picture>
+
+          <div
+            class="hotspots"
+            id="hotspots"
+            role="group"
+            aria-label="Choose a silhouette"
+          ></div>
+          <div class="holo-labels" id="holo-labels" aria-hidden="true"></div>
+
+          <div
+            class="detail-frame"
+            id="detail-frame"
+            aria-hidden="true"
+            hidden
+          ></div>
+
+          <video
+            class="camera"
+            id="forward-camera"
+            muted
+            playsinline
+            preload="none"
+            aria-hidden="true"
+          ></video>
+          <video
+            class="camera"
+            id="reverse-camera"
+            muted
+            playsinline
+            preload="none"
+            aria-hidden="true"
+          ></video>
+        </div>
+      </div>
+
+      <div class="collection-intro">
+        <p>FOOTWEAR / SERIES 01</p>
+        <h1>A different perspective.</h1>
+      </div>
+
+      <section
+        class="product-view"
+        id="product-view"
+        aria-label="Product information and purchase options"
+        hidden
+      >
+        <div class="product-copy">
+          <p class="product-kicker" id="product-kicker"></p>
+          <h1 id="product-title"></h1>
+          <p class="product-description" id="product-description"></p>
+        </div>
+
+        <div class="mobile-detail-visual" id="mobile-detail-visual" aria-hidden="true"></div>
+
+        <aside class="product-plane" aria-label="Purchase options">
+          <p class="purchase-note">SERIES 01 / FOOTWEAR</p>
+          <div class="purchase-header">
+            <p class="product-color" id="product-color"></p>
+            <p class="product-price" id="product-price"></p>
+          </div>
+
+          <div class="size-field">
+            <div class="size-top">
+              <label class="size-label" for="product-size">Choose your size</label>
+              <span class="size-unit">EU</span>
+            </div>
+            <div class="size-control">
+              <select
+                class="size-select"
+                id="product-size"
+                aria-label="Select size, EU"
+              ></select>
+            </div>
+          </div>
+
+          <button class="add-to-bag" id="add-to-bag" type="button" disabled>
+            <span class="add-copy">
+              <span class="add-label" id="add-label">Add to bag</span>
+              <span class="add-hint" id="add-hint">Select your size to continue</span>
+            </span>
+            <span class="add-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <g class="add-arrow">
+                  <path d="M5 8h14l1 12H4L5 8Z" />
+                  <path d="M9 9V6a3 3 0 0 1 6 0v3" />
+                </g>
+                <path class="add-check" d="m5 12 4 4L19 6" />
+              </svg>
+            </span>
+          </button>
+
+          <p class="selection-message" id="selection-message" role="status"></p>
+
+          <details class="product-more">
+            <summary>Design details</summary>
+            <p id="product-details"></p>
+          </details>
+        </aside>
+      </section>
+    </main>
+
+    <section
+      class="mobile-collection"
+      id="mobile-collection"
+      aria-label="Collection, ten silhouettes"
+      tabindex="-1"
+    >
+      <header class="mobile-collection-heading">
+        <p>FOOTWEAR / SERIES 01</p>
+        <h1>A different<br />perspective.</h1>
+        <span>Tap a silhouette. Find your perspective.</span>
+      </header>
+      <div class="mobile-shelves" id="mobile-shelves" aria-label="Ten silhouettes"></div>
+    </section>
+
+    <aside class="mobile-dock" id="mobile-dock" hidden aria-label="Selected silhouette">
+      <div>
+        <p id="dock-name"></p>
+        <span id="dock-meta"></span>
+      </div>
+      <button type="button" id="dock-open">View product</button>
+    </aside>
+
+    <footer class="site-footer">
+      <span class="footer-edition">
+        <span class="live-dot" aria-hidden="true"></span>
+        SERIES 01 <span class="footer-divider">/</span> 10 SILHOUETTES
+      </span>
+      <p id="status" role="status">Hover to illuminate. Select to explore.</p>
+      <button type="button" data-studio-open>
+        About this store <span aria-hidden="true">↗</span>
+      </button>
+    </footer>
+
+    <dialog class="bag-dialog" id="bag-dialog" aria-labelledby="bag-title">
+      <div class="bag-header">
+        <h2 id="bag-title">YOUR BAG</h2>
+        <button class="bag-close" id="bag-close" type="button" aria-label="Close bag">×</button>
+      </div>
+      <p class="bag-empty" id="bag-empty">Your bag is empty.</p>
+      <ul class="bag-lines" id="bag-lines"></ul>
+      <p class="bag-subtotal" id="bag-subtotal" hidden></p>
+      <p class="bag-note">Concept collection. Products are not available for purchase.</p>
+      <button class="bag-checkout" type="button" disabled>Checkout unavailable</button>
+    </dialog>
+
+    <dialog class="studio-dialog" id="studio-dialog" aria-labelledby="studio-title">
+      <button class="studio-close" id="studio-close" type="button" aria-label="Close studio notes">
+        Close <span aria-hidden="true">×</span>
+      </button>
+      <p class="studio-kicker">LAST DEPT. / STUDIO NOTES</p>
+      <h2 id="studio-title">A study in form.<br />A different perspective.</h2>
+      <p>
+        Ten original silhouettes. One shared space. A collection of textures, proportions and
+        unexpected details, made to be explored up close.
+      </p>
+      <div class="studio-facts">
+        <span>01 / EXPLORE THE WALL</span>
+        <span>02 / FIND YOUR SILHOUETTE</span>
+        <span>03 / MAKE IT YOURS</span>
+      </div>
+      <p class="studio-disclosure">
+        LAST DEPT. is a concept store. Product names and prices are for demonstration. Checkout is
+        unavailable.
+      </p>
+      <p class="studio-credit">
+        Front-end study recreation. Original concept, imagery and store design by Ascenta Studio.
+      </p>
+      <button class="studio-explore" id="studio-explore" type="button">
+        Explore the collection <span aria-hidden="true">↗</span>
+      </button>
+    </dialog>
+
+    <noscript>
+      <p class="noscript">
+        This storefront is an interactive experience. Please enable JavaScript to explore the
+        collection.
+      </p>
+    </noscript>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
